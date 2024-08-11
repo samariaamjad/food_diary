@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+html{
+  font-size: 62.5%;
+
+}
+/* ##########utility classes####### */
+.container{
+  max-width: 1300px;
+  width: 90%;
+margin: auto;
+}
+.btn{
+  cursor: pointer;
+  display: inline-block; 
+  padding: 1em 2.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 1em;
+    border-radius: 50px;
+    outline: none;
+   font-weight: 500;
+  
+}
+.btn-primary{
+  background:#16a083;
+  color: #fff;
+}
+/* ###########navbar########### */
+/* for desktop */
+
+ .navbar .hamburger-lines,
+ .navbar input[type='checkbox']{
+  display: none;
+}
+.navbar{
+  box-shadow: 0px 5px 10px 0px #aaa ;
+  position: fixed;
+  width: 100%;
+  opacity: 0.85;
+  z-index: 999;
+  background: #fff;
+  color: #000;
+}
+.navbar-container{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo{
+  font-size: 3rem;
+ order: 1;
+ 
+}
+.menu-items{
+order: 2;
+display: flex;
+}
+.menu-items li{
+   list-style: none;
+ padding: 1.5rem;
+  font-size: 1.8rem;
+}
+.menu-items a{
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+.menu-items a:hover{
+  color:#117964
+}
+
+/* ############### showcase area ########## */
+
+
+.showcase-area{
+  background: url("./image2/header-image2\ \(1\).jpg");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.showcase-container{
+  padding-top: 100px;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  font-size: 1.5rem;
+}
+.main-title{
+  text-transform: uppercase;
+}
+
+/* ########### ABOUT US ############ */
+
+#about{
+  background: #f5f5f7;
+  padding: 50px 0px;
+ 
+}
+.about-us{
+  display: flex;
+  flex-wrap: wrap;
+}
+#about .small{
+  font-size: 1.6rem;
+  color: #555;
+  font-weight:600;
+}
+#about p{
+  color:#444 ;
+  font-size: 1.6rem;
+}
+#about h2{
+  font-size: 3.2rem;
+}
+
+.about-img{
+  flex: 1 1 400px;
+   padding: 30px;
+transform: translateX(150%);
+animation: about-img-transformation 1s ease-in-out forwards ;
+}
+.about-img img{
+  display:block;
+  height: 400px;
+   max-width: 400px;
+    margin: auto;
+   object-fit: cover;
+   object-position: right;
+ }
+.about-text{
+  flex: 1 1 400px;
+ padding: 30px 0px;
+ margin: auto;
+margin-left: 100px;
+animation: about-text-transformation 1s ease-in-out forwards ;
+transform: translateX(-150%);
+}
+@keyframes about-text-transformation {
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes about-img-transformation {
+  100%{
+    transform: translateX(0);
+  }
+}
+
+/* ################## food bar ################# */
+#food{
+  padding:5rem 0 10rem 0 ;
+}
+#food h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+  color: #555;
+}
+.food-container{
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img{
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+  
+}
+.img-container{
+  margin: 0 1rem;
+  position: relative;
+  
+}
+.img-content{
+   left: 30%;
+   top: 50%;
+  position: absolute; 
+   transform: translate(-50% -50%);
+  z-index: 2;
+      opacity: 0;   
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s
+}
+
+.img-content h3{
+   color: #fff; 
+  font-size: 3rem;
+}
+.img-content a{
+  font-size: 1.2rem;
+}
+.img-container::after{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000c4;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after{
+  transform: scaleY(1);
+  opacity: 1;
+}
+.img-container:hover .img-content{
+  top: 20%;
+  opacity: 1;
+}
+/* ########## food menu ############# */
+.food-menu-heading{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+ 
+  font-weight: 400;
+  color: #666;
+}
+.food-menu-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0 30px 0;
+}
+.food-menu-container img{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.food-menu-item{
+  display: flex;
+  flex: 1 1 600px;
+  padding-bottom: 3rem;
+}
+.food-description{
+  margin: auto 1.5rem;
+}
+.food-menu-container p{
+  font-size: 1.5rem;
+  color: #444;
+}
+.food-title{
+  font-size: 400;
+  text-transform: capitalize;
+  color: #555;
+  font-size: 2.2rem;
+}
+.food-menu-container .food-price{
+  color: #117964;
+  font-weight: 500;
+}
+/* ######### testimonial ########## */
+#testimonial{
+  background: #00000036;
+  padding: 5rem 0;
+}
+.testimonial-heading{
+  font-size:3rem;
+  font-weight: 400;
+  color: #444;
+  text-align: center;
+}
+.testimonial-container{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+.checked{
+ color: #ff9529;
+}
+.testimonial-box .testimonial-text{
+  margin: 1rem 0;
+  color: #444;
+}
+.testimonial-box{
+  padding: 1rem;
+  text-align: center;
+}
+.testimonial-box img{
+  display: block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+}
+/* #### contact form ######## */
+#contact{
+  background: #5c5c5c18;
+  padding: 5rem 0;
+}
+.contact-container{
+ display: flex;
+ background: #fff;
+}
+.contact-image{
+  width: 50%
+}
+.contact-image img{
+height: 400px;
+display: block;
+object-fit: cover;
+object-position: center;
+width: 100%;
+}
+.contact-form{
+  padding: 1rem;
+  margin: auto;
+  width: 50%;
+}
+.contact-form input{
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  display: block;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  box-shadow: none;
+  width: 100%;
+  color: #555;
+  font-weight: 500;
+}
+.contact-form textarea{
+  width: 100%;
+  display: block;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 2px solid #ddd;
+}
+/* Base styles remain the same */
+
+/* ########## Media Queries ########## */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-items {
+    display: block;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .menu-items li {
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-img, .about-text {
+    flex: 1 1 100%;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .about-img img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .food-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-container img {
+    max-height: 250px;
+  }
+
+  .food-menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .food-menu-container img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-image, .contact-form {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .contact-image img {
+    height: auto;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .navbar {
+    box-shadow: none;
+    opacity: 1;
+    position: relative;
+  }
+
+  .navbar .hamburger-lines,
+  .navbar input[type='checkbox'] {
+    display: block;
+  }
+
+  .menu-items {
+    display: none; /* To be controlled by a toggle button in practice */
+  }
+
+  .showcase-area {
+    height: 40vh;
+  }
+
+  .showcase-container {
+    padding-top: 60px;
+  }
+
+  .about-img {
+    animation: none; /* Disable animation on smaller screens */
+    transform: none;
+  }
+
+  .about-text {
+    animation: none; /* Disable animation on smaller screens */
+    transform: none;
+  }
+
+  .food-container {
+    flex-direction: column;
+  }
+
+  .food-container img {
+    max-height: 200px;
+  }
+
+  .food-menu-container {
+    flex-direction: column;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.4rem;
+  }
+}
+
+/* For very small devices like phones in portrait mode */
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.8em 1.5em;
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .food-menu-heading {
+    font-size: 2.5rem;
+  }
+
+  .food-title {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-heading {
+    font-size: 2.5rem;
+  }
+}
+
